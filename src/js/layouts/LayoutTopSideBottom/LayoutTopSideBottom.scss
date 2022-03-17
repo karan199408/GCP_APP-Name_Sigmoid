@@ -1,0 +1,57 @@
+@import "../../../styles/sass/NewThemeVariables.scss";
+
+section.body {
+  display: flex;
+  padding-top: $headerHeight;
+  // min-height: calc(100vh - 85px);
+  padding-bottom: 25px;
+
+  &.not-full {
+    min-height: unset;
+  }
+
+  main.content {
+    transition: all $transition;
+    .no-apps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 8%;
+      color: $primaryColor;
+      font-size: $primaryFontSizeS;
+      img {
+        height: 20vh;
+        width: 100%;
+      }
+    }
+    &.main-expanded {
+      width: $mainWidthExpanded;
+    }
+
+    &.main-collapsed {
+      width: $mainWidthCollapsed;
+    }
+
+    padding: $paddingAround;
+    height: $mainHeight;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    &.padding-none {
+      padding: 0px;
+    }
+  }
+
+  main.content.full {
+    width: 100%;
+    height: auto !important;
+  }
+
+  main.content.power-bi-report {
+    height: calc(100vh - 73px) !important;
+    padding: 0px !important;
+    background: #f7f7f7;
+    width: $mainWidthExpanded;
+  }
+}

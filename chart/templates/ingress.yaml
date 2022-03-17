@@ -1,0 +1,23 @@
+{{- if .Values.ingress.enabled -}}
+{{- $fullName := include "chart.fullname" . -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: '{{ .Values.staticip.name }}'
+    networking.gke.io/managed-certificates: '{{ .Values.cert.name }}'
+    networking.gke.io/v1beta1.FrontendConfig: "rb-aide-frontend-config"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  {{- range .Values.ingress.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+        - backend:
+            serviceName: {{ $fullName }}
+            servicePort: {{ $.Values.service.port }}
+  {{- end }}
+{{- end }}

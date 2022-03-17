@@ -1,0 +1,25 @@
+@import "../../../styles/sass/NewThemeVariables.scss";
+
+.page-not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: $primaryColor;
+  width: 100%;
+  .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    .page-not-found-title {
+      color: #cacaca;
+    }
+    .page-not-found-icon {
+      color: #cacaca;
+      font-size: 40px;
+      margin-right: 10px;
+    }
+  }
+}

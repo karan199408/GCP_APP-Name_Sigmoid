@@ -1,0 +1,9 @@
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+ name: rb-base-aide-frontend-config
+ namespace: {{ .Values.namespace }}
+spec:
+ redirectToHttps:
+   enabled: true
+   responseCodeName: "301"

@@ -1,0 +1,111 @@
+@import "../../../styles/sass/NewThemeVariables.scss";
+
+aside {
+  z-index: 1;
+  box-shadow: $sidenavBoxShadow;
+  background-color: $sidenavBGColorLight;
+  transition: width $transition;
+  nav {
+    padding-top: $paddingAroundSingle;
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: $sidenavItemPadding;
+      cursor: pointer;
+      color: $primaryColor;
+      margin: 5px 10px;
+      &.active,
+      &:hover {
+        color: $sidenavActiveFontColor;
+        background: rgba(235, 54, 127, 0.1);
+        border-radius: 5px;
+      }
+      &.special {
+        border-radius: 4px;
+        font-weight: 600;
+        background-color: $sidenavActiveFontColor;
+        color: white;
+        margin: 5px 10px;
+        &:hover {
+          background: rgba(235, 54, 127, 0.1);
+          color: $sidenavActiveFontColor;
+        }
+        &.active {
+          display: flex;
+          align-items: center;
+          margin: none;
+          justify-content: flex-start;
+          width: inherit;
+          padding: $sidenavItemPadding;
+          background: rgba(235, 54, 127, 0.1);
+          color: $sidenavActiveFontColor;
+          border-radius: 2px;
+          &:hover {
+            background: rgba(235, 54, 127, 0.1);
+            color: $sidenavActiveFontColor;
+          }
+        }
+      }
+      .nav-icon {
+        width: $sidenavIconSize;
+        font-size: $sidenavIconSize;
+        margin-right: $sidenavIconMarginRight;
+      }
+      .nav-text {
+        margin: 0px;
+        display: flex;
+        font-size: $sidenavTextSize;
+        justify-content: left;
+        align-items: center;
+        transition: font-size $transition;
+        &.hidden {
+          font-size: 0px;
+          opacity: 0;
+        }
+        &.visible {
+          font-size: 13px;
+          opacity: 1;
+        }
+      }
+    }
+    .nav-item-menu {
+      display: flex;
+      align-items: center;
+      padding: $sidenavItemPadding;
+      margin: 5px 10px;
+      cursor: pointer;
+      .nav-icon-menu {
+        width: $sidenavIconSize;
+        font-size: $sidenavIconSize;
+        margin-right: $sidenavIconMarginRight;
+        color: $primaryColor;
+      }
+      .nav-text-menu {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        font-size: 15px;
+        height: 25px;
+        margin: 0px;
+        color: $primaryColor;
+        transition: all $transition;
+        &.hidden {
+          font-size: 0px;
+          opacity: 0;
+        }
+        &.visible {
+          font-size: 13px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+aside.light.sidenav-expanded {
+  width: $sidenavWidthExpanded;
+}
+
+aside.light.sidenav-collapsed {
+  width: $sidenavWidthCollapsed;
+}

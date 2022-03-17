@@ -1,0 +1,85 @@
+//Body
+$fontFamily: "Hind Siliguri" !important;
+
+//Header
+$headerHeight: 50px;
+$headerIconSize: 22px;
+$headerIconMarginRight: 20px;
+$rbLogoHeight: 37px;
+$primaryHeaderColor: #ea3592;
+$headerBGLight: white;
+$headerIconColor: #46596a;
+
+//Footer
+$footerHeight: 25px;
+$footerFontColor: #ffffff;
+
+//Sidenav
+$sidenavWidth: 238px;
+$totalHeaderFooterHeight: 73px; //header 48px + footer 25 px
+$sidenavIconSize: 20px;
+$sidenavTextSize: 14px;
+$sidenavItemPadding: 10px 25px 10px 12px;
+$sidenavItemMarginBottom: 10px;
+$sidenavIconMarginRight: 15px;
+$sidenavActiveBGColor: #e9f7fc;
+$sidenavActiveFontColor: #eb367f;
+$sidenavBorderColor: #e2e2e2;
+$sidenavBoxShadow: 5px 0px 4px -3px #e2e2e2;
+$sidenavWidthExpanded: 235px;
+$sidenavWidthCollapsed: 65px;
+$sidenavBGColorLight: #f1f2f7;
+$activeDatasetColor: #dff2f3;
+
+//Text
+$primaryFontSizeXXS: 11px;
+$primaryFontSizeXS: 12px;
+$primaryFontSizeS: 13px;
+$primaryFontSizeM: 15px;
+$primaryFontSizeL: 16px;
+$primaryFontSizeXL: 18px;
+$primaryFontSizeXXL: 20px;
+$primaryFontSizeXXXL: 22px;
+$disabledFontColor: #a3a3a3;
+$primaryFontColorDark: #ffffff;
+
+//App
+$appSide: 130px;
+$appSideHomePage: 140px;
+$appIconSize: 25px;
+$appIconSizeLarge: 30px;
+$appRowGridGap: 2%;
+$appRowGridGapHomePage: 3%;
+$appRowGridGapConfig: 5%;
+$appColumnGridGap: 2.5%;
+$appBGColor: #f1f1f1;
+$appBGColorLight: #f9f9f9;
+$appBGColorDark: #dfe1e6;
+
+//Icon size
+$iconS: 12px;
+$iconM: 13px;
+$iconL: 14px;
+$iconXL: 15px;
+$iconXXL: 16px;
+
+//Common
+$primaryColor: #46596a;
+$secondaryColor: #eb367f;
+$fifthColor: #25b1e6;
+$fourthColor: #f5c405;
+$fifthColor: #4eafb3;
+$errorColor: red;
+$paddingAround: 30px 30px 15px 30px;
+$paddingAroundSingle: 2px;
+$mainWidthExpanded: calc(100% - #{$sidenavWidthExpanded});
+$mainWidthCollapsed: calc(100% - #{$sidenavWidthCollapsed});
+$mainHeight: calc(100vh - #{$totalHeaderFooterHeight});
+$primaryBR: 4px;
+$inputEleBorderColor: #dedede;
+$fontWeightBold: 900;
+$fontWeightNormal: 700;
+$fontWeightLight: 400;
+$transition: 0.2s ease-out;
+$iconSizeSmall: 18px;
+

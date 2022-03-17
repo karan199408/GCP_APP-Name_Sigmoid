@@ -1,0 +1,24 @@
+{{- if .Values.ingress.enabled -}}
+{{- $fullName := include "chart.fullname" . -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "chart.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+    cloud.google.com/backend-config: '{"default": "rb-base-aide-backend-config"}'
+#    beta.cloud.google.com/backend-config: '{"default": "{{ .Chart.Name }}"}'
+    cloud.google.com/app-protocols: '{"http": "HTTP", "https":"HTTP", "http2":"HTTP"}'
+  labels:
+{{ include "chart.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    run:  {{ .Chart.Name }}
+{{- end }}

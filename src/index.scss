@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round");
+@import "./styles/sass/NewThemeVariables.scss";
+
+body {
+  margin: 0;
+  font-family: "Hind Siliguri" !important;
+  overflow: hidden;
+}
+:focus {
+  outline: -webkit-focus-ring-color auto 0px !important;
+  outline: -moz-focus-ring-color auto 0px !important;
+}
+
+.disabled-style {
+  text-decoration: none !important;
+}
+
+.error {
+  color: $errorColor;
+  //margin: 5px !important;
+}
+
+button {
+  background-color: $primaryHeaderColor;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.material-icons-outlined,
+.material-icons {
+  cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b1b1b1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

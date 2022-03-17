@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+{{ include "chart.labels" . | indent 4 }}
+spec:
+  selector:
+    matchLabels:
+      run: {{ template "chart.name" . }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        run: {{ template "chart.name" . }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      initContainers:
+        - name: ulimit
+          image: busybox
+          command:
+            - sh
+            - -c
+            - ulimit -n 100000
+          securityContext:
+            privileged: true
+        - name: net-core-somaxconn
+          image: busybox
+          command:
+            - sh
+            - -c
+            - sysctl -w net.core.somaxconn=12800
+          securityContext:
+            privileged: true
+      volumes:
+      - name: microsoft-key
+        secret:
+          secretName: microsoft-key
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - containerPort: 5000
+            protocol: TCP
+          volumeMounts:
+          - name: microsoft-key
+            mountPath: /usr/share/nginx/html/.well-known/microsoft-identity-association.json
+          securityContext:
+            allowPrivilegeEscalation: true
+            privileged: true
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
