@@ -1,0 +1,59 @@
+# Default values for prebid-pubsub.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: aide-base
+
+replicaCount: 1
+
+image:
+  repository: gcr.io/dev-consumer-data-hub/rb_aide_base_frontend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+#autoneg:
+#  name:
+#  max_rate_per_endpoint: 1000
+
+service:
+  type: NodePort
+  port: 80
+  containerPort: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: mroi-dev.rbone.net    #domain name of app
+
+  tls: []
+
+cert:
+  name: rb-aide-base-frontend #add cert name
+  domainname: mroi-dev.rbone.net    #domain should be similar to ingress host
+
+staticip:
+  name: lb-data-reckitt-com  #name of the static ip
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 4Gi
+  requests:
+    cpu: 500m
+    memory: 2Gi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+hpa:
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPUUtilizationPercentage: 60
+  targetMemoryUtilizationPercentage: 60

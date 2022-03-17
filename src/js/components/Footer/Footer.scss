@@ -1,0 +1,18 @@
+@import "../../../styles/sass/NewThemeVariables.scss";
+
+footer {
+  display: flex;
+  height: $footerHeight;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: $headerIconColor;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  .footer-text {
+    margin: 0px;
+    font-size: 11px;
+    color: $footerFontColor;
+  }
+}

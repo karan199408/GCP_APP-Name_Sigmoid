@@ -1,0 +1,30 @@
+[
+  {
+    "id": "actiontab",
+    "name": "Action Tab",
+    "materialUiIconName": "add_circle",
+    "materialUiClassName": "material-icons-outlined",
+    "specialStyling": true
+  },
+  {
+    "id": "tab1",
+    "name": "Tab 1",
+    "materialUiIconName": "settings",
+    "materialUiClassName": "material-icons-outlined",
+    "specialStyling": false
+  },
+  {
+    "id": "tab2",
+    "name": "Tab 2",
+    "materialUiIconName": "query_builder_rounded",
+    "materialUiClassName": "material-icons-outlined",
+    "specialStyling": false
+  },
+  {
+    "id": "tab3",
+    "name": "Tab 3",
+    "materialUiIconName": "filter_none",
+    "materialUiClassName": "material-icons-outlined",
+    "specialStyling": false
+  }
+]

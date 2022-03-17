@@ -1,0 +1,26 @@
+@import "../../../styles/sass/NewThemeVariables.scss";
+
+.screen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: $primaryColor;
+  width: 100%;
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    .screen-title {
+      color: #cacaca;
+      font-size: 1rem;
+    }
+    .screen-icon {
+      color: #cacaca;
+      font-size: 40px;
+    }
+  }
+}

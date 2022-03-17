@@ -1,0 +1,125 @@
+@import "../../../styles/sass/NewThemeVariables.scss";
+
+.logo-container {
+  padding: 20px 40px;
+  .rb-logo {
+    width: 80px;
+    height: 42px;
+  }
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 85px);
+  margin-top: 40px;
+  overflow: scroll;
+
+  .login-container-left {
+    width: 60%;
+
+    .login-carousel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      min-height: 65vh;
+
+      .carousel-image {
+        width: 100%;
+        height: 200px;
+        display: block;
+      }
+      .carousel-texts-container {
+        width: 55%;
+        padding-top: 20px;
+        text-align: center;
+        color: $primaryColor;
+
+        .reckitt-text {
+          color: $secondaryColor;
+          font-weight: $fontWeightBold;
+          font-size: $primaryFontSizeXXXL;
+          margin: 0px;
+        }
+
+        .carousel-primary-text {
+          font-weight: $fontWeightBold;
+          font-size: $primaryFontSizeXXXL;
+          font-weight: 600;
+          font-size: 18px;
+          margin: 0px 0px 20px;
+        }
+
+        .carousel-secondary-text-1 {
+          font-size: $primaryFontSizeL;
+          margin-bottom: 5px;
+        }
+
+        .carousel-secondary-text-2 {
+          font-size: $primaryFontSizeL;
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  .login-container-right {
+    width: 40%;
+    .login-page-sign-in-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      border: 1px solid grey;
+      width: 70%;
+      min-height: 65vh;
+      background: $primaryColor;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      color: $primaryFontColorDark;
+
+      .sign-in-button-container {
+        text-align: center;
+        padding: 10% 0;
+        width: 100%;
+
+        .sign-in-button {
+          font-size: $primaryFontSizeM;
+          width: 60%;
+          height: 6vh;
+          background: $secondaryColor;
+          border-radius: $primaryBR;
+        }
+      }
+
+      .logo-container {
+        .rb-logo {
+          height: 70px;
+          width: 140px;
+        }
+      }
+
+      .sign-in-button {
+        font-weight: 500;
+        width: 150px;
+      }
+
+      .login-welcome-container {
+        flex-direction: column;
+        font-size: $primaryFontSizeS;
+        padding: 12%;
+        border-radius: $primaryBR;
+        .login-welcome-text {
+          font-size: $primaryFontSizeXXL;
+          font-weight: $fontWeightBold;
+        }
+
+        .login-info-text {
+          font-size: $primaryFontSizeL;
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+    }
+  }
+}

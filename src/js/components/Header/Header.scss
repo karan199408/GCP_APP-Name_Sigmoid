@@ -1,0 +1,50 @@
+@import "../../../styles/sass/NewThemeVariables.scss";
+
+header {
+  display: flex;
+  height: $headerHeight;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 0px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0px 4px 10px rgba(221, 221, 221, 0.25);
+  .top-left-nav {
+    display: flex;
+    align-items: center;
+    .rb-logo-container {
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+      .rb-logo {
+        height: $rbLogoHeight;
+        width: auto;
+      }
+    }
+    .rb-logo-text {
+      color: $sidenavActiveFontColor;
+      margin: 0px;
+      padding: 20px 0px 10px 20px;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+    }
+  }
+  .header-menu {
+    display: flex;
+    align-items: center;
+  }
+  .user-info-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: $primaryFontSizeS;
+    .header-menu-icon {
+      color: $primaryColor;
+      font-size: $headerIconSize;
+      width: $headerIconSize;
+    }
+  }
+}

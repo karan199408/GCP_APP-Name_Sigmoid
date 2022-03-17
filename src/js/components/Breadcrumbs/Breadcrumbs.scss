@@ -1,0 +1,22 @@
+@import "../../../styles/sass/NewThemeVariables.scss";
+
+.breadcrumb {
+  margin-bottom: 15px;
+  font-weight: bolder;
+  color: $sidenavActiveFontColor;
+  .breadcrumb-item-container {
+    .breadcrumb-item {
+      font-size: $primaryFontSizeS;
+      text-decoration: none !important;
+      text-transform: capitalize;
+      color: $sidenavActiveFontColor;
+
+      &.active {
+        color: $primaryColor;
+        text-transform: none;
+        font-weight: 600;
+        text-decoration: none !important;
+      }
+    }
+  }
+}
